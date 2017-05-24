@@ -1,0 +1,12 @@
+Ahora solo se pueden crear administradores desde la consola de Mysql, aqui abajo dejo un administrador de prueba.
+
+Usuario Administrador: copiar como instruccion de mysql dentro de la base de datos "usuarios":
+
+INSERT INTO usuarios(nombre,fechnac,correo,nombre_usuario,password,oregano,permiso) VALUES('Administrador','30/25/1999','administrador@hotmail.com','administrador','2f80d1a9ee5050b4d0457e956323208aa74d4cce0d5d1c2c23c17f2f713135285e29c015e5bf5ae3dc3f62690f016ace9d547931510c6ce327bf5cb8542bfb7a','ae8d325f65f1c08831608fa6ab8536d8','1');
+
+
+
+Una vez hecho lo anterior, iniciar sesion de manera normal con los siguientes datos:
+
+Usuario: administrador
+Contraseña: kc5Ld@rT  --> IMPORTANTE¡!¡!¡!
