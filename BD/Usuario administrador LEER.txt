@@ -9,4 +9,7 @@ INSERT INTO usuarios(nombre,fechnac,correo,nombre_usuario,password,oregano,permi
 Una vez hecho lo anterior, iniciar sesion de manera normal con los siguientes datos:
 
 Usuario: administrador
-Contraseña: kc5Ld@rT  --> IMPORTANTE¡!¡!¡!
+ContraseÃ±a: kc5Ld@rT  --> IMPORTANTEÂ¡!Â¡!Â¡!
+
+
+En caso de querer crear un usuario administrador personalizado, seguir las intrucciones de: creatucontraseÃ±aAdministradorxD.php
