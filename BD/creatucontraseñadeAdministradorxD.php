@@ -1,4 +1,12 @@
-<!--Aqui podras crear tus contraseñas para usuario administrador-->
+<!--Aqui podras crear tus contraseñas para usuario administrador
+NONONONON Mejor solo usen el usuario: administrador, no se que paso, pero no jala, lo tratare de checar, sino , no lo usen.
+1. Ejecuta este archivo en una pagina independiente de tu navegador.
+2. remplaza la variable $str=, con tu nueva contraseña.
+3. copia la cadena completa de $mix y oregano en un INSERT INTO.
+4. Una vez insertado con exito, listo inicia sesion.
+
+
+-->
 <?php
 echo"<body>";
 $str="9am3rTU%";//AQUI va la contraseña que quieres
