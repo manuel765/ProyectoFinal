@@ -1,0 +1,61 @@
+<!Doctype html>
+<html lang ="es">
+        <head>
+			<title id="title"></title>
+			<meta charset="UTF-8"/>
+			<script type="text/javascript" src="jquery-3.2.1.js"></script>
+			<script src="AJAX/js/jquery-1.11.2.min.js"></script>
+				<script src="AJAX/js/material.min.js"></script>
+        </head>
+         <body>
+         	<section id="pub">
+         	</section>
+			  <script type="text/javascript">
+				var x;
+				var cpub=1;
+				var user=document.cookie.split('=');
+				$.ajax({
+					url:"publicaciones.php",
+					type:"GET",
+					data:{
+						m: x
+					},
+					success:function(resul){
+						resul=JSON.stringify(resul);
+						resul=resul.split('\\"');
+						console.log(resul);
+						for(var i=1;i<resul.length;i=i+2){
+							var x= resul[i];
+						var r = /\\u([\d\w]{4})/gi;
+							x = x.replace(r, function (match, grp) {
+    					return String.fromCharCode(parseInt(grp, 16)); } );
+							x=x.replace(/\\/g,"");
+							resul[i]=x;
+						}
+						console.log(resul);
+						for(var m=3;m<resul.length;m=m+8){
+							$("#pub").add("<div id='publicacion"+cpub+"'></div>").appendTo(document.body);
+									$("#publicacion"+cpub+":last").append("<h1>"+resul[m]+" </h1>");
+									$("#publicacion"+cpub+":last").append("<em>"+resul[m+4]+"</em><br/><em>Publicado:"+resul[m+2]+"<br/>");
+									$("#publicacion"+cpub+":last").append("<div id='comentario"+cpub+"'></div>");
+									$("#comentario"+cpub+":last").append("<form action='comentarios.php' method='POST' class='AjaxForm'><input  type='text' name='comentario'> <input type='hidden' name='id_publicacion' value='"+resul[m-2]+"'/><input type='hidden' name='id_usuario' value='"+resul[m]+"'/><button >Enviar datos</button></form>");
+									cpub++;
+								}
+					}
+				});
+				$(document).on('ready', function(){
+   				$('.AjaxForm').on('submit',function(e) {
+       			e.preventDefault();
+        		var datos=$(this).serialize();
+        		var metodo=$(this).attr('method');
+        		var action=$(this).attr('action');
+        		$.ajax({
+            	type: metodo,
+            	url: action,
+            	data: datos,
+        		});
+			}); 
+		});
+			</script>
+        </body>
+</html>
